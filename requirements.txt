@@ -1,2 +1,7 @@
-openai 
-python-dotenv
+openai~=1.88.0
+python-dotenv~=1.1.0
+langchain-openai~=0.3.24
+asyncio~=3.4.3
+langchain-community~=0.3.25
+langchain-text-splitters~=0.3.8
+qdrant-client~=1.14.3

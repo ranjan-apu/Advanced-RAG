@@ -35,6 +35,8 @@ def rag_qa(question, retriever, llm, history):
     retrived_docs = retriever.invoke(question)
     context = build_context_with_metadata(retrived_docs)
     sources = format_sources(retrived_docs)
+    print("retrived all related documents ")
+    print("context: ", context)
 
     if not history:
         history = [
@@ -69,7 +71,7 @@ retriever = vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})
 llm = ChatOpenAI(
     openai_api_key=os.getenv("OPENROUTER_KEY"),
     openai_api_base="https://openrouter.ai/api/v1",
-    model_name="qwen/qwen3-32b:free"
+    model_name="deepseek/deepseek-chat-v3-0324:free"
 )
 
 # ---- Usage Loop ----
